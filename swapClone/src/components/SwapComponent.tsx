@@ -99,19 +99,20 @@ const SwapComponent = () => {
 
       // Create asset objects in the format expected by Garden SDK
       const inputAsset = {
-        chain: fromChain,
+        chain: fromChain as "bitcoin_testnet" | "ethereum_sepolia" | "arbitrum_sepolia",
         symbol: fromAsset.symbol,
         decimals: fromAsset.decimals,
         tokenAddress: fromAsset.tokenAddress,
         atomicSwapAddress: fromAsset.atomicSwapAddress,
+        name: fromAsset.name,
       };
-
       const outputAsset = {
-        chain: toChain,
+        chain: toChain as "bitcoin_testnet" | "ethereum_sepolia" | "arbitrum_sepolia" | "bitcoin" | "bitcoin_regtest" | "ethereum" | "base" | "arbitrum" | "arbitrum_localnet" | "ethereum_localnet" | "core",
         symbol: toAsset.symbol,
         decimals: toAsset.decimals,
         tokenAddress: toAsset.tokenAddress,
         atomicSwapAddress: toAsset.atomicSwapAddress,
+        name: toAsset.name,
       };
 
       // Fetch quote
@@ -160,19 +161,21 @@ const SwapComponent = () => {
       );
 
       const inputAsset = {
-        chain: fromChain,
+        chain: fromChain as "bitcoin" | "bitcoin_testnet" | "bitcoin_regtest" | "ethereum" | "base" | "arbitrum" | "ethereum_sepolia" | "arbitrum_localnet" | "arbitrum_sepolia" | "ethereum_localnet" | "core",
         symbol: fromAsset.symbol,
         decimals: fromAsset.decimals,
         tokenAddress: fromAsset.tokenAddress,
         atomicSwapAddress: fromAsset.atomicSwapAddress,
+        name: fromAsset.name,
       };
 
       const outputAsset = {
-        chain: toChain,
+        chain: toChain as "bitcoin" | "bitcoin_testnet" | "bitcoin_regtest" | "ethereum" | "base" | "arbitrum" | "ethereum_sepolia" | "arbitrum_localnet" | "arbitrum_sepolia" | "ethereum_localnet" | "core" | "solana" | "sui" | "sui_testnet",
         symbol: toAsset.symbol,
         decimals: toAsset.decimals,
         tokenAddress: toAsset.tokenAddress,
         atomicSwapAddress: toAsset.atomicSwapAddress,
+        name: toAsset.name,
       };
 
       // Initiate the swap
@@ -227,10 +230,17 @@ const SwapComponent = () => {
       <h2 className="swap-component__title">Swap Across Chains</h2>
 
       {/* Wallet Connection Status */}
-      {isConnected && (
+      {isConnected ? (
         <div className="swap-component__wallet-status">
           Wallet Connected: {address?.slice(0, 6)}...{address?.slice(-4)}
         </div>
+      ) : (
+        <button
+          onClick={handleConnectWallet}
+          className="swap-component__button swap-component__button--primary"
+        >
+          Connect Wallet
+        </button>
       )}
 
       {/* From Chain Selection */}
