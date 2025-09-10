@@ -1,0 +1,183 @@
+.transaction-history {
+  padding: 16px;
+  font-family: system-ui, sans-serif;
+}
+
+.transaction-history__title {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.transaction-history__warning {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #fef3c7;
+  border-radius: 6px;
+  color: #92400e;
+}
+
+.transaction-history__controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.transaction-history__per-page {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-history__per-page-label {
+  margin-right: 8px;
+  font-size: 13px;
+}
+
+.transaction-history__per-page-select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.transaction-history__pagination {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.transaction-history__pagination-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.transaction-history__pagination-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.transaction-history__pagination-btn:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.transaction-history__pagination-info {
+  font-size: 13px;
+}
+
+.transaction-history__refresh-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-left: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.transaction-history__refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.transaction-history__loading {
+  text-align: center;
+  padding: 40px;
+}
+
+.transaction-history__empty {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+}
+
+.transaction-history__table-container {
+  overflow-x: auto;
+}
+
+.transaction-history__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-history__table-header {
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 8px;
+}
+
+.transaction-history__table-row {
+  border-top: 1px solid #f3f4f6;
+}
+
+.transaction-history__table-cell {
+  padding: 8px;
+}
+
+.transaction-history__order-link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.transaction-history__order-link:hover {
+  text-decoration: underline;
+}
+
+.transaction-history__status-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.transaction-history__status-badge--completed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.transaction-history__status-badge--in-progress {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.transaction-history__status-badge--pending {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.transaction-history__status-badge--default {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+.transaction-history__amount-container {
+  font-size: 12px;
+}
+
+.transaction-history__amount-detail {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.transaction-history__tx-link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.transaction-history__tx-link:hover {
+  text-decoration: underline;
+}
+
+.transaction-history__tx-hash {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.transaction-history__summary {
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 13px;
+}

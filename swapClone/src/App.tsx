@@ -4,6 +4,7 @@ import { GardenProvider } from '@gardenfi/react-hooks';
 import { Environment } from '@gardenfi/utils';
 import { Route, Routes } from 'react-router-dom';
 import SwapPage from './Pages/SwapPage';
+import TransactionPage from './Pages/TransactionPage';
 
 export default function App() {
   const { data: walletClient } = useWalletClient();
@@ -19,7 +20,7 @@ export default function App() {
     >
         <Routes>
           <Route path="/" element={ <SwapPage/> } />
-       
+          <Route path="/transactions" element={ <TransactionPage/> } />
         </Routes>
     </GardenProvider>
   );
